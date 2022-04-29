@@ -2,12 +2,19 @@ import React from "react";
 import { useInc } from "../hooks/useInc";
 
 const Increment = () => {
-  const [value, { dec, inc }] = useInc();
+  const [volume, { dec, inc, reset }] = useInc({
+    maxValue: 10,
+    minValue: -10,
+    step: 3,
+    initial: 5,
+  });
   return (
     <div>
+      <h3>Volume</h3>
       <button onClick={dec}>-</button>
-      {value}
+      {volume}
       <button onClick={inc}>+</button>
+      <button onClick={reset}>Reset Volume</button>
     </div>
   );
 };
