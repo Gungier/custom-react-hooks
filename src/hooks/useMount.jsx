@@ -1,9 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-export const useMount = () => {
-    
-}
+export const useMount = (func) => {
+  useEffect(() => {
+    func();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+};
 
-export const useUnmount = () => {
-
+export const useUnmount = (func) => {
+  useEffect(() => {
+    return () => {
+      // cleanup
+      func();
+    };
+  });
 };
