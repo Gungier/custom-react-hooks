@@ -6,6 +6,7 @@ import Increment from "./components/Increment";
 import Mount from "./components/Mount";
 import Hover from "./components/Hover";
 import Cookie from "./components/Cookie";
+import Script from "./components/Script";
 import { PageWrapper } from "./state";
 import Nav from "./components/Nav";
 import Menu from "./Menu";
@@ -25,6 +26,7 @@ function App() {
         <Nav />
         <Container>
           <h2>Super Cool</h2>
+          <Script />
           <Toggle />
           <Increment />
           <Mount />
